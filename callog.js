@@ -4,16 +4,16 @@ function calcMonthsUntilPaidOff(localBalance, localAPR, localMonthlyPayment) {
     let denominator = Math.log10(1 + dailyRate);
     let numeratorN  = Math.log(1 + ((localBalance/localMonthlyPayment) * (1 - (1 + dailyRate)**30 )));
     let denominatorN = Math.log(1 + dailyRate);
-    console.log("dailyRate  : ", dailyRate);
-    console.log("numerator  : ", numerator );
-    console.log("numeratorN  : ", numeratorN );
+    console.log("dailyRate    : ", dailyRate);
+    console.log("numerator    : ", numerator );
+    // console.log("numeratorN  : ", numeratorN );
     console.log("denominator  : ", denominator ); 
-    console.log("denominatorN  : ", denominatorN );
-    console.log("Ratio   : ", numerator / denominator );
-    console.log("RatioN  : ", numeratorN / denominatorN );
+    // console.log("denominatorN  : ", denominatorN );
+    console.log("Ratio        : ", numerator / denominator );
+    // console.log("RatioN  : ", numeratorN / denominatorN );
 
-    console.log("Months10  : ", (-(1 / 30)) * ( numerator / denominator));
-    console.log("MonthsN  : ", (-(1 / 30)) * ( numeratorN / denominatorN));
+    console.log("Result Months: ", (-(1 / 30)) * ( numerator / denominator));
+    // console.log("MonthsN  : ", (-(1 / 30)) * ( numeratorN / denominatorN));
    
     let localMonths = Math.ceil((-(1 / 30)) * ( numerator / denominator));
     return localMonths;
